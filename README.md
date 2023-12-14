@@ -4,6 +4,7 @@
 
 - Java Version : 17
 - Maven : 3.8.1
+- MySQL
 
 ## Usage
 ### Configuration
