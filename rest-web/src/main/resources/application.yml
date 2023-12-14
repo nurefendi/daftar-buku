@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1/perpus
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  application:
+    name: cakap-order
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: false
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    hikari.connectionInitSql: SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        jdbc:
+          batch_size: 50
+    show-sql: false
+  jackson.serialization:
+    fail-on-empty-beans: false
+    WRITE_DATES_AS_TIMESTAMPS: true
+    WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: true
+
+
+datasource:
+  url: jdbc:mysql://127.0.0.1:3306/perpusDb?zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Jakarta
+  username: root
+  password:
+  scanPackage: com.mazayaku.entity.dao
+  driverClassName: com.mysql.cj.jdbc.Driver
+  maxPoolSize: 3
+  hibernate:
+    hbm2ddl.method: validate
+    show_sql: false
+    format_sql: false
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    use_jdbc_metadata_defaults: true
+    enable_lazy_load_no_trans: true
+    charset: utf8mb4
+    charset_encoding: utf8mb4_bin
+    use_unicode: true
+    batch_size: 50
