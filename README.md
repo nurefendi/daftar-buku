@@ -1,5 +1,17 @@
 # daftar-buku
 
+## Getting Started
+this project make using spring boot reactive.
+<br>
+build with separate modules based on functionality
+- **entity** : Contains domain models or entity classes.
+- **repository** : Contains interfaces or classes for data access.
+- **rest-web** : Contains REST controllers.
+- **service** : Contains service classes for business logic.
+- **utility** : Holds utility or helper classes.
+
+and for main class putted on **rest-web**
+[Main.java](./rest-web/src/main/java/com/mazayaku/Main.java)
 ## Requirements
 
 - Java Version : 17
@@ -62,7 +74,9 @@ datasource:
 
 
 ### Running the Project
+clone project
 ```shell
+git clone https://github.com/nurefendi/daftar-buku.git
 cd daftar-buku
 ```
 build project
@@ -74,6 +88,14 @@ run
 ```shell
 mvn spring-boot:run
 ```
+
+### Running the Project using IntelliJ IDEA
+- clone project
+```shell
+git clone https://github.com/nurefendi/daftar-buku.git
+```
+- open project daftar-buku
+
 
 ### API Endpoints
 - **GET v1/perpus/books:** get all books.
